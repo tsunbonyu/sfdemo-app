@@ -7,7 +7,6 @@ const todos = require('./todos');
 
 module.exports = {
     ...basicInfo,
-    ...servers,
     ...components,
     ...tags,
     ...todos
