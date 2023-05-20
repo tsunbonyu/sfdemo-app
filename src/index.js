@@ -7,6 +7,7 @@ const cors = require("cors");
 const swaggerUI = require("swagger-ui-express");
 const docs = require('./docs');
 const todoRouter = require('./routes/todos');
+const swaggerJsdoc = require('swagger-jsdoc');
 
 const adapter = new FileSync(join(__dirname,'..','db.json'));
 const db = low(adapter);
@@ -22,6 +23,11 @@ app.use(morgan("dev"));
 app.use(cors());
 app.use('/todos',todoRouter);
 app.use('/api-docs',swaggerUI.serve,swaggerUI.setup(docs));
+//const swaggerSpec = swaggerJsdoc(docs)
+app.get('/docs.json', (req, res) => {
+    res.setHeader('Content-Type', 'application/json')
+    res.send(docs)
+  })
 
 //initialize the app.
 async function initialize(){    
