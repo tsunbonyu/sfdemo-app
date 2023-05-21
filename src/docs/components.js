@@ -4,41 +4,71 @@ module.exports = {
         schemas:{
             id:{
                 type:'string',
-                description:"An id of a todo",
+                description:"An id of an order",
                 example: "tyVgf"
             },
-            Todo:{
+            Order:{
                 type:'object',
                 properties:{
                     id:{
                         type:'string',
-                        description:"Todo identification number",
+                        description:"Order identification number",
                         example:"ytyVgh"
                     },
-                    title:{
+                    customer:{
                         type:'string',
-                        description:"Todo's title",
-                        example:"Coding in JavaScript"
+                        description:"Customer Name",
+                        example:"David Yu"
+                    },
+                    item:{
+                        type:'string',
+                        description:"Item's title",
+                        example:"Trash Can"
+                    },
+                    quantity:{
+                        type:"number",
+                        description:"Item Quantity",
+                        example:2
+                    },
+                    fulfillmentCenter:{
+                        type:"number",
+                        description:"Fulfillment Center",
+                        example:12345
                     },
                     completed:{
                         type:"boolean",
-                        description:"The status of the todo",
-                        example:false
+                        description:"Order completed",
+                        example:true
                     }
                 }
             },
-            TodoInput:{
+            OrderInput:{
                 type:'object',
                 properties:{
-                    title:{
+                    customer:{
                         type:'string',
-                        description:"Todo's title",
-                        example:"Coding in JavaScript"
+                        description:"Customer Name",
+                        example:"David Yu"
+                    },
+                    item:{
+                        type:'string',
+                        description:"Item's title",
+                        example:"Trash Can"
+                    },
+                    quantity:{
+                        type:"number",
+                        description:"Item Quantity",
+                        example:2
+                    },
+                    fulfillmentCenter:{
+                        type:"number",
+                        description:"Fulfillment Center",
+                        example:12345
                     },
                     completed:{
                         type:"boolean",
-                        description:"The status of the todo",
-                        example:false
+                        description:"Order completed",
+                        example:true
                     }
                 }
             },

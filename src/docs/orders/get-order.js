@@ -1,8 +1,8 @@
 module.exports = {
     get:{
-        tags:['Todo CRUD operations'],
-        description: "Get a todo",
-        operationId: "getTodo",
+        tags:['Order CRUD operations'],
+        description: "Get a order",
+        operationId: "getOrder",
         parameters:[
             {
                 name:"id",
@@ -11,28 +11,28 @@ module.exports = {
                     $ref:"#/components/schemas/id"
                 },
                 required:true,
-                description: "A single todo id"
+                description: "A single order id"
             }
         ],
         responses:{
             '200':{
-                description:"Todo is obtained",
+                description:"Order is obtained",
                 content:{
                     'application/json':{
                         schema:{
-                            $ref:"#/components/schemas/Todo"
+                            $ref:"#/components/schemas/Order"
                         }
                     }
                 }
             },
             '404':{
-                description: "Todo is not found",
+                description: "Order is not found",
                 content:{
                     'application/json':{
                         schema:{
                             $ref:'#/components/schemas/Error',
                             example:{
-                                message:"We can't find the todo",
+                                message:"We can't find the order",
                                 internal_code:"Invalid id"
                             }
                         }

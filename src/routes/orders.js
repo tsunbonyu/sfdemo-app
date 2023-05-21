@@ -6,45 +6,45 @@ const idLength = 8;
 
 router.get('/', (req,res) => {
 
-    let todos = req.app.db.get('todos').value();
+    let orders = req.app.db.get('orders').value();
 
-    return res.send(todos);
+    return res.send(orders);
 
 });
 
 router.get('/:id', (req,res) => {
 
-    let todo = req.app.db.get('todos').find({ 
+    let order = req.app.db.get('orders').find({ 
         id: req.params.id
     }).value();
 
-    if(!todo){
+    if(!order){
 
         res.sendStatus(404);
 
         return res.send({
-            message: "Todo cannot be found",
+            message: "Order cannot be found",
             internal_code: "Invalid id"
         });
 
     };
 
-    return res.send(todo);
+    return res.send(order);
 
 });
 
 router.post('/', (req,res) => {
 
-    let todo = {
+    let order = {
         id:nanoid(idLength),
         ...req.body
     };
 
     try {
 
-        req.app.db.get("todos").push(todo).write();
+        req.app.db.get("orders").push(order).write();
         
-        return res.sendStatus(201).send("Todo saved successfully");
+        return res.sendStatus(201).send("Order saved successfully");
 
     }catch(error){
 
@@ -54,27 +54,27 @@ router.post('/', (req,res) => {
 
 router.put('/:id', (req,res) => {
 
-    //find todo.
-    let todo = req.app.db.get("todos").find({
+    //find order.
+    let order = req.app.db.get("orders").find({
         id: req.params.id
     }).value();
 
-    if(!todo){
+    if(!order){
 
         return res.sendStatus(404);
 
     };
 
-    //update that todo.
+    //update that order.
     try {
 
-        req.app.db.get("todos").find({
+        req.app.db.get("orders").find({
             id:req.params.id
         })
-        .assign({ completed: !todo['completed'] })
+        .assign({ completed: !order['completed'] })
         .write();
 
-        return res.send("Todo updated");
+        return res.send("Order updated");
 
     } catch(error) {
 
@@ -88,25 +88,25 @@ router.put('/:id', (req,res) => {
 
 router.delete('/:id', (req,res) => {
 
-    //find todo.
-    let todo = req.app.db.get("todos").find({
+    //find order.
+    let order = req.app.db.get("orders").find({
         id:req.params.id
     }).value();
 
-    if(!todo){
+    if(!order){
 
         return res.sendStatus(404);
 
     };
 
-    // delete the todo.
+    // delete the order.
     try {
-        req.app.db.get("todos").remove({
+        req.app.db.get("orders").remove({
             id:req.params.id
         })
         .write();
 
-        return res.send("Todo deleted");
+        return res.send("order deleted");
 
     } catch(error) {
 

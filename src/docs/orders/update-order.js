@@ -1,8 +1,8 @@
 module.exports = {
-    delete:{
-        tags: ['Todo CRUD operations'],
-        description: "Deleting a todo",
-        operationId: "deleteTodo",
+    put:{
+        tags:['Order CRUD operations'],
+        description: "Update Order",
+        operationId: "updateOrder",
         parameters:[
             {
                 name:"id",
@@ -11,19 +11,21 @@ module.exports = {
                     $ref:"#/components/schemas/id"
                 },
                 required:true,
-                description: "Deleting a done todo"
+                description: "Id of order to be updated"
             }
         ],
         responses:{
+
             '200':{
-                description:"Todo deleted successfully"
+                description: "Order updated successfully"
             },
             '404':{
-                description:"Todo not found"
+                description: "Order not found"
             },
             '500':{
-                description:"Server error"
+                description: "Server error"
             }
+            
         }
     }
 }

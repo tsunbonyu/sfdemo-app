@@ -1,5 +1,5 @@
 module.exports = {
     tags: [
-         'Todo CRUD operations'
+         'Order CRUD operations'
     ]
 }

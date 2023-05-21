@@ -1,22 +1,22 @@
 
 module.exports = {
     post:{
-        tags:['Todo CRUD operations'],
-        description: "Create todo",
-        operationId: "createTodo",
+        tags:['Order CRUD operations'],
+        description: "Create Order",
+        operationId: "createOrder",
         parameters:[],
         requestBody: {
             content:{
                 'application/json': {
                     schema:{
-                        $ref:'#/components/schemas/TodoInput'
+                        $ref:'#/components/schemas/OrderInput'
                     }
                 }
             }
         },
         responses:{
             '201':{
-                description: "Todo created successfully"
+                description: "Order created successfully"
             },
             '500':{
                 description: 'Server error'

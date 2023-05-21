@@ -1,16 +1,16 @@
 module.exports = {
     get:{
-        tags: ['Todo CRUD operations'],
-        description: "Get todos",
-        operationId: 'getTodos',
+        tags: ['Order CRUD operations'],
+        description: "Get Orders",
+        operationId: 'getOrders',
         parameters:[],
         responses:{
             '200':{
-                description:"Todos were obtained",
+                description:"Orders were obtained",
                 content:{
                     'application/json':{
                         schema:{
-                            $ref:'#/components/schemas/Todo'
+                            $ref:'#/components/schemas/Order'
                         }
                     }
                 }
