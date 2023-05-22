@@ -23,7 +23,6 @@ app.use(morgan("dev"));
 app.use(cors());
 app.use('/orders',orderRouter);
 app.use('/api-docs',swaggerUI.serve,swaggerUI.setup(docs));
-//const swaggerSpec = swaggerJsdoc(docs)
 app.get('/docs.json', (req, res) => {
     res.setHeader('Content-Type', 'application/json')
     res.send(docs)

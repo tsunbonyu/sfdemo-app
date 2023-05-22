@@ -20,7 +20,7 @@ router.get('/:id', (req,res) => {
 
     if(!order){
 
-        res.sendStatus(404);
+        res.status(404);
 
         return res.send({
             message: "Order cannot be found",
@@ -44,11 +44,11 @@ router.post('/', (req,res) => {
 
         req.app.db.get("orders").push(order).write();
         
-        return res.sendStatus(201).send("Order saved successfully");
+        return res.status(201).send(`Order ${order.id} send to MBE successfully`);
 
     }catch(error){
 
-        return res.sendStatus(500).send(error);
+        return res.status(500).send(error);
     }
 });
 
