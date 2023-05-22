@@ -26,14 +26,14 @@ module.exports = {
                         example:"Trash Can"
                     },
                     quantity:{
-                        type:"number",
+                        type:"string",
                         description:"Item Quantity",
-                        example:2
+                        example:"2"
                     },
                     fulfillmentCenter:{
-                        type:"number",
+                        type:"string",
                         description:"Fulfillment Center",
-                        example:12345
+                        example:"12345"
                     },
                     completed:{
                         type:"boolean",
@@ -56,14 +56,14 @@ module.exports = {
                         example:"Trash Can"
                     },
                     quantity:{
-                        type:"number",
+                        type:"string",
                         description:"Item Quantity",
-                        example:2
+                        example:"2"
                     },
                     fulfillmentCenter:{
-                        type:"number",
+                        type:"string",
                         description:"Fulfillment Center",
-                        example:12345
+                        example:"12345"
                     },
                     completed:{
                         type:"boolean",
