@@ -23,7 +23,7 @@ router.get('/:id', (req,res) => {
         res.sendStatus(404);
 
         return res.send({
-            message: "Order cannot be found.",
+            message: "Order cannot be found",
             internal_code: "Invalid id"
         });
 
