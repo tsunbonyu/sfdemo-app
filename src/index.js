@@ -29,7 +29,7 @@ app.get('/docs.json', (req, res) => {
     res.send(docs)
   })
 
-//initialize the app.
+//initialize the order app.
 async function initialize(){    
     app.listen(PORT);
 };
