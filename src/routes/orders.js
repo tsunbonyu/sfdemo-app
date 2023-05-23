@@ -44,7 +44,7 @@ router.post('/', (req,res) => {
 
         req.app.db.get("orders").push(order).write();
         
-        return res.status(201).send(`Order ${order.id} send to MBE successfully`);
+        return res.status(201).send(`Order ${order.id} crated in MBE successfully`);
 
     }catch(error){
 

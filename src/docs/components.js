@@ -35,6 +35,11 @@ module.exports = {
                         description:"Fulfillment Center",
                         example:"12345"
                     },
+                    poNumber:{
+                        type:"string",
+                        description:"PO Number",
+                        example:"22366473"
+                    },
                     completed:{
                         type:"boolean",
                         description:"Order completed",
@@ -64,6 +69,11 @@ module.exports = {
                         type:"string",
                         description:"Fulfillment Center",
                         example:"12345"
+                    },
+                    poNumber:{
+                        type:"string",
+                        description:"PO Number",
+                        example:"22366473"
                     },
                     completed:{
                         type:"boolean",
