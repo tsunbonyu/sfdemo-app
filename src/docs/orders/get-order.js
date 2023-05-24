@@ -1,7 +1,7 @@
 module.exports = {
     get:{
         tags:['Order CRUD operations'],
-        description: "Get a order",
+        description: "Get an order",
         operationId: "getOrder",
         parameters:[
             {

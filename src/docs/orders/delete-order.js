@@ -1,7 +1,7 @@
 module.exports = {
     delete:{
         tags: ['Order CRUD operations'],
-        description: "Deleting a order",
+        description: "Deleting an order",
         operationId: "deleteOrder",
         parameters:[
             {
@@ -11,7 +11,7 @@ module.exports = {
                     $ref:"#/components/schemas/id"
                 },
                 required:true,
-                description: "Deleting a order"
+                description: "Deleting an order"
             }
         ],
         responses:{
